@@ -9,16 +9,16 @@
 
 <style>
 :root {
-    --page: #ffffff;
-    --card1: #fbfaf7;
-    --card2: #efede8;
-    --ink: #14182e;
-    --sub: #5d6068;
-    --track: #e6e5e2;
+    --page: #FFFFFF;
+    --card1: #FBFAF7;
+    --card2: #EFEDE8;
+    --ink: #14182E;
+    --sub: #5D6068;
+    --track: #E6E5E2;
     --row: rgba(255,255,255,.85);
     --shadow: 0 5px 15px rgba(60,55,40,.10);
 
-    /* Widget size: 0.85 = 85% */
+    /* Widget scale: 0.85 = 85% */
     --widget-scale: 0.85;
 }
 
@@ -43,7 +43,7 @@ body {
     align-items: flex-start;
 }
 
-/* OUTER WRAPPER */
+/* WRAPPER */
 
 .widget-wrapper {
     width: 100%;
@@ -57,17 +57,14 @@ body {
     width: 100%;
     border-radius: 22px;
     overflow: hidden;
-
     background: radial-gradient(
         120% 90% at 30% 0%,
         var(--card1),
         var(--card2)
     );
-
     box-shadow:
         0 16px 40px rgba(0,0,0,.16),
         0 2px 5px rgba(0,0,0,.07);
-
     padding: 30px 32px 27px;
 }
 
@@ -111,7 +108,7 @@ h1 {
     margin: 9px 0 23px 4px;
     font-size: 12px;
     letter-spacing: .18em;
-    color: #3b3e4a;
+    color: #3B3E4A;
     text-transform: uppercase;
 }
 
@@ -122,12 +119,10 @@ h1 {
     grid-template-columns: 40px 99px minmax(0,1fr) 65px;
     align-items: center;
     gap: 12px;
-
     background: var(--row);
     border-radius: 18px;
     padding: 12px 14px;
     margin-bottom: 12px;
-
     box-shadow: var(--shadow);
     backdrop-filter: blur(6px);
 }
@@ -150,7 +145,7 @@ h1 {
     font-family: 'Playfair Display', Georgia, serif;
     font-weight: 600;
     font-size: 16px;
-    color: #1d2033;
+    color: #1D2033;
 }
 
 .lbl span {
@@ -184,14 +179,14 @@ h1 {
 .pct small {
     font-size: 10px;
     font-weight: 500;
-    color: #8a8d95;
+    color: #8A8D95;
 }
 
 /* DIVIDER */
 
 hr {
     border: 0;
-    border-top: 1px solid #cfcdc7;
+    border-top: 1px solid #CFCDC7;
     margin: 18px 4px 16px;
 }
 
@@ -213,7 +208,7 @@ hr {
     width: 49px;
     height: 49px;
     border-radius: 50%;
-    background: #dfe0d6;
+    background: #DFE0D6;
     display: grid;
     place-items: center;
     flex: none;
@@ -222,7 +217,7 @@ hr {
 .age small {
     display: block;
     font-size: 13px;
-    color: #3b3e4a;
+    color: #3B3E4A;
 }
 
 .age .v {
@@ -234,7 +229,7 @@ hr {
 
 .age .t {
     font-size: 10px;
-    color: #8a8d95;
+    color: #8A8D95;
     margin-top: 5px;
     font-variant-numeric: tabular-nums;
 }
@@ -247,7 +242,7 @@ hr {
     font-family: 'Mrs Saint Delafield', cursive;
     font-size: 32px;
     line-height: .9;
-    color: #5e6b82;
+    color: #5E6B82;
     transform: rotate(-6deg);
 }
 
@@ -259,9 +254,7 @@ hr {
     margin-left: 27px;
 }
 
-/* ==========================================
-   RESPONSIVE NOTION LAYOUT
-   ========================================== */
+/* RESPONSIVE NOTION LAYOUT */
 
 @media (max-width: 650px) {
 
@@ -270,15 +263,10 @@ hr {
     }
 
     body {
-        background: #ffffff;
+        background: #FFFFFF;
         padding: 20px 0;
         display: block;
     }
-
-    /*
-       The wrapper takes 85% of the available width.
-       The card is scaled proportionally.
-    */
 
     .widget-wrapper {
         width: calc(100% * var(--widget-scale));
@@ -287,13 +275,10 @@ hr {
 
     .card {
         width: calc(100% / var(--widget-scale));
-
         transform: scale(var(--widget-scale));
         transform-origin: top left;
-
         padding: 20px 14px 22px;
         border-radius: 18px;
-
         box-shadow: 0 4px 15px rgba(0,0,0,.12);
     }
 
@@ -328,10 +313,8 @@ hr {
     .row {
         grid-template-columns: 38px minmax(0,1fr) auto;
         grid-template-rows: auto auto;
-
         column-gap: 9px;
         row-gap: 10px;
-
         padding: 11px;
         margin-bottom: 10px;
         border-radius: 14px;
@@ -419,10 +402,7 @@ hr {
     }
 }
 
-/* EXTRA-SMALL EMBEDS */
-
 @media (max-width: 350px) {
-
     .card {
         padding: 16px 11px;
     }
@@ -454,29 +434,22 @@ hr {
 
 <main class="card">
 
-    <!-- BOTANICAL DECORATIONS -->
-
     <svg class="plants" id="p1" viewBox="0 0 300 250"></svg>
     <svg class="plants" id="p2" viewBox="0 0 190 120"></svg>
 
     <div class="inner">
 
         <h1>Time Progress</h1>
-
         <div class="date" id="date"></div>
 
         <!-- DAY -->
 
         <div class="row">
-
-            <div class="ico" style="background:#fdf0dc">
+            <div class="ico" style="background:#FDF0DC">
                 <svg viewBox="0 0 32 32">
-                    <circle cx="16" cy="16" r="7" fill="#ffb12b"/>
-                    <g stroke="#f7a31c"
-                       stroke-width="2.2"
-                       stroke-linecap="round">
-                        <path d="M16 2v4 M16 26v4
-                                 M2 16h4 M26 16h4
+                    <circle cx="16" cy="16" r="7" fill="#FFB12B"/>
+                    <g stroke="#F7A31C" stroke-width="2.2" stroke-linecap="round">
+                        <path d="M16 2v4 M16 26v4 M2 16h4 M26 16h4
                                  M6 6l3 3 M23 23l3 3
                                  M26 6l-3 3 M9 23l-3 3"/>
                     </g>
@@ -490,31 +463,24 @@ hr {
 
             <div class="track">
                 <div class="fill" id="dayB"
-                     style="background:linear-gradient(90deg,#f8718a,#fa9c6a 50%,#fbc94a)">
+                     style="background:linear-gradient(90deg,#F8718A,#FA9C6A 50%,#FBC94A)">
                 </div>
             </div>
 
             <div class="pct" id="dayP"></div>
-
         </div>
 
         <!-- MONTH -->
 
         <div class="row">
-
-            <div class="ico" style="background:#dff3ea">
+            <div class="ico" style="background:#DFF3EA">
                 <svg viewBox="0 0 32 32">
-                    <rect x="4" y="6" width="24" height="22"
-                          rx="4" fill="#2f9c78"/>
-                    <path d="M4 12h24"
-                          stroke="#dff3ea"
-                          stroke-width="2"/>
-                    <g stroke="#2f9c78"
-                       stroke-width="2.5"
-                       stroke-linecap="round">
+                    <rect x="4" y="6" width="24" height="22" rx="4" fill="#2F9C78"/>
+                    <path d="M4 12h24" stroke="#DFF3EA" stroke-width="2"/>
+                    <g stroke="#2F9C78" stroke-width="2.5" stroke-linecap="round">
                         <path d="M10 3v5 M22 3v5"/>
                     </g>
-                    <g fill="#dff3ea">
+                    <g fill="#DFF3EA">
                         <rect x="9" y="16" width="4" height="4" rx="1"/>
                         <rect x="16" y="16" width="4" height="4" rx="1"/>
                         <rect x="9" y="22" width="4" height="4" rx="1"/>
@@ -530,26 +496,23 @@ hr {
 
             <div class="track">
                 <div class="fill" id="monB"
-                     style="background:linear-gradient(90deg,#2aa593,#58dc8b 55%,#38c8e2)">
+                     style="background:linear-gradient(90deg,#2AA593,#58DC8B 55%,#38C8E2)">
                 </div>
             </div>
 
             <div class="pct" id="monP"></div>
-
         </div>
 
         <!-- YEAR -->
 
         <div class="row">
-
-            <div class="ico" style="background:#ece6fb">
+            <div class="ico" style="background:#ECE6FB">
                 <svg viewBox="0 0 32 32">
-                    <path d="M16 2
-                             C17 9 22 14 30 16
+                    <path d="M16 2 C17 9 22 14 30 16
                              C22 18 17 23 16 30
                              C15 23 10 18 2 16
                              C10 14 15 9 16 2Z"
-                          fill="#9258f3"/>
+                          fill="#9258F3"/>
                 </svg>
             </div>
 
@@ -560,12 +523,11 @@ hr {
 
             <div class="track">
                 <div class="fill" id="yrB"
-                     style="background:linear-gradient(90deg,#a63df0,#8a7bf5 55%,#66b6fb)">
+                     style="background:linear-gradient(90deg,#A63DF0,#8A7BF5 55%,#66B6FB)">
                 </div>
             </div>
 
             <div class="pct" id="yrP"></div>
-
         </div>
 
         <hr>
@@ -573,17 +535,12 @@ hr {
         <!-- AGE -->
 
         <div class="age">
-
             <div class="av">
-                <svg width="30" height="30"
-                     viewBox="0 0 32 32"
-                     fill="none"
-                     stroke="#2c2f3a"
-                     stroke-width="2.2"
-                     stroke-linecap="round">
+                <svg width="30" height="30" viewBox="0 0 32 32"
+                     fill="none" stroke="#2C2F3A"
+                     stroke-width="2.2" stroke-linecap="round">
                     <circle cx="16" cy="10.5" r="6"/>
-                    <path d="M4.5 28
-                             C5.3 21.8 10.1 18.5 16 18.5
+                    <path d="M4.5 28 C5.3 21.8 10.1 18.5 16 18.5
                              S26.7 21.8 27.5 28"/>
                 </svg>
             </div>
@@ -593,7 +550,6 @@ hr {
                 <div class="v" id="age"></div>
                 <div class="t" id="ageT"></div>
             </div>
-
         </div>
 
     </div>
@@ -604,28 +560,20 @@ hr {
     </div>
 
 </main>
-
 </div>
 
 <script>
 
-/* ==========================================
-   CONFIGURATION
-   ========================================== */
+/* CONFIGURATION */
 
 const BIRTH = new Date(1994, 1, 17);
 
-/* ==========================================
-   HELPERS
-   ========================================== */
+/* HELPERS */
 
 const $ = id => document.getElementById(id);
-
 const p2 = n => String(n).padStart(2, '0');
 
-/* ==========================================
-   BOTANICAL ILLUSTRATIONS
-   ========================================== */
+/* BOTANICAL ILLUSTRATIONS */
 
 let seed = 7;
 
@@ -633,15 +581,14 @@ const rnd = () =>
     (seed = (seed * 16807) % 2147483647) / 2147483647;
 
 const cols = [
-    '#6f8b62',
-    '#7d9a6d',
-    '#5f7d56',
-    '#8aa77b',
-    '#4f6b49'
+    '#6F8B62',
+    '#7D9A6D',
+    '#5F7D56',
+    '#8AA77B',
+    '#4F6B49'
 ];
 
 function leaf(x, y, a, s, c) {
-
     const w = s * .36;
 
     return `
@@ -667,19 +614,17 @@ function leaf(x, y, a, s, c) {
 }
 
 function branch(x0, y0, cx, cy, x1, y1, n, size) {
-
     let output = `
         <path
             d="M${x0} ${y0} Q${cx} ${cy} ${x1} ${y1}"
             fill="none"
-            stroke="#7a6a4f"
+            stroke="#7A6A4F"
             stroke-width="1.6"
             stroke-linecap="round"
         />
     `;
 
     for (let i = 1; i <= n; i++) {
-
         const t = i / (n + 1);
 
         const x =
@@ -729,12 +674,9 @@ $('p2').innerHTML =
     branch(150,118,100,100,28,42,4,32) +
     branch(125,116,98,82,78,24,3,28);
 
-/* ==========================================
-   AGE CALCULATION
-   ========================================== */
+/* AGE CALCULATION */
 
 function calculateAge(now, birth) {
-
     let years = now.getFullYear() - birth.getFullYear();
     let months = now.getMonth() - birth.getMonth();
     let days = now.getDate() - birth.getDate();
@@ -756,12 +698,9 @@ function calculateAge(now, birth) {
     return [years, months, days];
 }
 
-/* ==========================================
-   PROGRESS BARS
-   ========================================== */
+/* PROGRESS BARS */
 
 function updateBar(id, percentage) {
-
     const value = Math.max(0, Math.min(100, percentage));
 
     $(id + 'B').style.width = value.toFixed(3) + '%';
@@ -773,12 +712,9 @@ function updateBar(id, percentage) {
         '<small>.' + parts[1] + '%</small>';
 }
 
-/* ==========================================
-   LIVE UPDATE
-   ========================================== */
+/* LIVE UPDATE */
 
 function tick() {
-
     const now = new Date();
 
     const year = now.getFullYear();
@@ -870,7 +806,6 @@ function tick() {
 }
 
 tick();
-
 setInterval(tick, 1000);
 
 </script>
