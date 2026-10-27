@@ -9,7 +9,7 @@
 
 <style>
 :root {
-    --page: #e9e8e4;
+    --page: #ffffff;
     --card1: #fbfaf7;
     --card2: #efede8;
     --ink: #14182e;
@@ -18,18 +18,15 @@
     --row: rgba(255,255,255,.85);
     --shadow: 0 5px 15px rgba(60,55,40,.10);
 
-    /* Change to 0.85 for 15% reduction */
-    --widget-scale: 0.80;
+    /* Widget size: 0.85 = 85% */
+    --widget-scale: 0.85;
 }
 
-*,
-*::before,
-*::after {
+*, *::before, *::after {
     box-sizing: border-box;
 }
 
-html,
-body {
+html, body {
     margin: 0;
     width: 100%;
     min-height: 100%;
@@ -268,15 +265,19 @@ hr {
 
 @media (max-width: 650px) {
 
+    html, body {
+        min-height: 0;
+    }
+
     body {
-        padding: 0;
+        background: #ffffff;
+        padding: 20px 0;
         display: block;
     }
 
     /*
-       The wrapper occupies the scaled dimensions.
-       The card is rendered at its original dimensions
-       and then scaled proportionally.
+       The wrapper takes 85% of the available width.
+       The card is scaled proportionally.
     */
 
     .widget-wrapper {
